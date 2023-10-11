@@ -1,0 +1,5 @@
+package com.example.student.global.excep;
+
+public class GlobalException {
+
+}

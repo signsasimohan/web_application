@@ -1,0 +1,11 @@
+package student.mark.sheet.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import student.mark.sheet.entity.MarkSheet;
+
+public interface StudentMarkSheetRepository extends JpaRepository<MarkSheet,Integer>{
+
+	MarkSheet findId(int id);
+
+}

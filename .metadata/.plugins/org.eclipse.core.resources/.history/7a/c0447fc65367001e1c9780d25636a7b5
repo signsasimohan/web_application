@@ -1,0 +1,27 @@
+package student.result.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentResultServicre {
+	@Autowired
+	StudentResultDao stuDao;
+	
+	public String insertData(Studentresult sr) {
+		
+		double total = (double) sr.getTotalmarks();
+		double ans = ((total/400)*100);
+		int fans = (int) ans;
+		sr.setTotalmarks(fans);
+		sr.setPercentage(fans);
+		
+		return stuDao.insertDao(sr);
+		
+	}
+	public List<Results>gettoprankers(){
+		
+		return stuDao.gettoprankers();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.example.student.custom.expception;
+
+public class CustomExceptions {
+
+}

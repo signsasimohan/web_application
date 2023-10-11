@@ -1,0 +1,20 @@
+package com.example.student.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.example.student.entity.Student;
+import com.example.student.repository.StudentRepository;
+
+@Repository
+public class StudentDao {
+	 @Autowired
+	   StudentRepository stuRepo;
+	   
+		public String insertStudent(Student e) {
+		   stuRepo.save(e);
+		   return "Done";
+	   }
+	
+
+}

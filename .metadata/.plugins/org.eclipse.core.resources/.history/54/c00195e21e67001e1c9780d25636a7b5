@@ -1,0 +1,25 @@
+package student.mark.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import student.mark.entity.MarkSheet;
+import student.mark.service.StudentMarkSheetService;
+
+@RestController
+@RequestMapping(value = "markSheet")
+public class StudentMarkSheetController {
+	@Autowired
+    StudentMarkSheetService marSer;
+	
+	@PostMapping(value = "/mark")
+	public MarkSheet createMark(@RequestBody MarkSheet markSheet) {
+		
+		return marSer.createMark(markSheet);
+	}
+	
+	
+}

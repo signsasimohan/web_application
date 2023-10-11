@@ -1,0 +1,53 @@
+package student.result.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import student.result.entity.MarkSheet;
+import student.result.entity.Results;
+import student.result.entity.Student;
+
+@RestController
+@RequestMapping(value = "results")
+
+public class StudentResultController {
+	@Autowired
+	RestTemplate rest;
+	public String insertData(@RequestBody Results sr) {
+		String url = "http://localhost:8082/findId/";
+		ResponseEntity<Student> obj = rest.exchange(url+sr.getRoolNumber(),
+				          HttpMethod.GET,null,Results.class);
+		Student input = obj.getBody();
+		
+		String url1 = "";
+		ResponseEntity<MarkSheet> obj1 = rest.exchange(url+sr.getRoolNumber(),
+				          HttpMethod.GET,null,Student.class);
+		MarkSheet input1 = obj1.getBody();
+		
+		sr.setName(input.getName());
+		int total = 0;
+		
+		if(input.g>90) {
+			
+		total =(input1.getSem1Total()+input1.getSem2Total())+5;
+		sr.setTotalMarks(total);
+		
+		}
+		else {
+			total =(input1.getSem1Total()+input1.getSem2Total());
+			sr.setTotalMarks(total);
+			
+		}
+		
+		
+		
+		
+		
+	} 
+
+}

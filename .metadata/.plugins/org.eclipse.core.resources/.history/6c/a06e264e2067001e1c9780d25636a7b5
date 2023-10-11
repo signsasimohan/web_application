@@ -1,0 +1,21 @@
+package student.mark.service;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import student.mark.entity.MarkSheet;
+
+@Service
+@Repository
+
+public class StudentMarkSheetService {
+	
+	
+ 
+
+public MarkSheet createMarkSheet(MarkSheet markSheet) {
+	// TODO Auto-generated method stub
+	return null;
+}
+	
+}

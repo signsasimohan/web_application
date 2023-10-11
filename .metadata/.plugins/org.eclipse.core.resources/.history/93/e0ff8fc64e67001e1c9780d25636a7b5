@@ -1,0 +1,42 @@
+package student.result.entity;
+
+public class Results {
+	
+	
+	private int roolNumber;
+	private String name;
+	private int totalMarks;
+	private int percentage;
+	
+	
+	
+	
+	public int getRoolNumber() {
+		return roolNumber;
+	}
+	public void setRoolNumber(int roolNumber) {
+		this.roolNumber = roolNumber;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getTotalMarks() {
+		return totalMarks;
+	}
+	public void setTotalMarks(int totalMarks) {
+		this.totalMarks = totalMarks;
+	}
+	public int getPercentage() {
+		return percentage;
+	}
+	public void setPercentage(int percentage) {
+		this.percentage = percentage;
+	}
+	
+	
+	
+
+}
